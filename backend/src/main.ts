@@ -3,6 +3,9 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  app.enableCors();
+  app.setGlobalPrefix('/api');
+  await app.listen(8080);
+  console.log(`Application is running on: 8080`);
 }
 bootstrap();
