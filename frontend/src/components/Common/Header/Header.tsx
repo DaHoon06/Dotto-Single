@@ -1,7 +1,14 @@
 import React from "react";
+import { Navigation, Top, Status } from "./index";
+import './Header.scss';
 
-const Header = () => {
-
+export const Header = () => {
+  return (
+    <header className='header-container'>
+      <Top />
+      <Status />
+      <Navigation />
+    </header>
+  );
 }
 
-export default Header;

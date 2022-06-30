@@ -1,5 +1,5 @@
 import React from "react";
-import HomePresenter from "./HomePresenter";
+import Home from "./Home";
 import { customAxios } from "../../../lib/customAxios";
 
 // markup 없이 데이터만 presnter에게 props 로 내림
@@ -11,7 +11,7 @@ const HomeContainer = async () => {
   console.log(data);
 
   return (
-    <HomePresenter />
+    <Home />
   )
 }
 

@@ -1,0 +1,49 @@
+@import '../../../assets/style/Common/palette';
+
+.header-container {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 144px;
+  left: 0;
+  top: 0;
+  background: $color-white;
+  z-index: 10;
+  flex-direction: column;
+  border-bottom: 1px solid $color-gray02;
+
+  /* 상단 Top 컴포넌트 */
+  #top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+  }
+  #logo {
+    margin-left: 25px;
+    width: 103px;
+    height: 40px;
+    left: 4px;
+    top: 0;
+  }
+
+  /* 중간 Navigation 컴포넌트 */
+  nav {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  nav ul {
+    padding-left: 17px;
+  }
+
+  nav ul li {
+    float: left;
+    margin-right: 20px;
+  }
+
+}
+
