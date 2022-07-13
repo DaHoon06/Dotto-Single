@@ -1,0 +1,30 @@
+@import "../../assets/style/Common/palette";
+
+#dotto-board-container {
+
+}
+
+.dotto-card-container {
+  border: 1px solid gray;
+  width: 288px;
+  height: 438px;
+}
+.dotto-img-wrapper {
+  width: 288px;
+  height: 288px;
+  border: 1px solid gray;
+}
+
+.tags {
+  color: $color-gray05;
+  background-color: $color-gray01;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.dotto-item-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: calc(438px - 310px);
+}

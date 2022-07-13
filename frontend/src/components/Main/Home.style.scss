@@ -1,0 +1,17 @@
+#home-container {
+  width: 100%;
+  min-height: 1200px;
+  height: 100%;
+  padding-top: 144px;
+}
+
+/* 닷투 게시판 */
+#home-items-container {
+  width: 80%;
+  margin: auto;
+}
+
+.home-top-items-menu {
+  display: flex;
+  justify-content: space-between;
+}
