@@ -1,4 +1,3 @@
-import React from "react";
 
 export const Status = (props: any) => {
   return (

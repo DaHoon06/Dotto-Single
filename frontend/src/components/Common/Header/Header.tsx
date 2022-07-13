@@ -1,4 +1,3 @@
-import React from "react";
 import { Navigation, Top, Status } from "./index";
 import './Header.scss';
 

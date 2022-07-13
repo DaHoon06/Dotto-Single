@@ -1,4 +1,3 @@
-import React from "react";
 import './Home.style.scss';
 import { Dotto } from "../DottoBoard/Dotto";
 

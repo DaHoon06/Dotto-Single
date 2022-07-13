@@ -1,4 +1,3 @@
-import React from "react";
 import { Home } from "./Home";
 import { customAxios } from "../../lib/customAxios";
 

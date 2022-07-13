@@ -1,4 +1,3 @@
-import React from "react";
 import './Dotto.style.scss';
 export interface IDotto {
   limit: number
