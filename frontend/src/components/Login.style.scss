@@ -1,0 +1,120 @@
+@import '../assets/style/Common/palette';
+
+#login-container {
+  display: flex;
+  max-width: 400px;
+  margin: 45px auto 0 auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* wrapper */
+#logo-wrapper {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.login-items {
+  width: 100%;
+  margin: auto;
+}
+
+.login-button-wrapper {
+  max-width: 336px;
+  width: 100%;
+  height: 52px;
+  margin: auto auto 16px auto;
+}
+
+#social-login-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-sub-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  margin: 32px auto 82px auto;
+}
+
+#password-find, #join {
+  color: $color-gray04;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#line-division {
+  color: $color-gray02;
+}
+/* 로그인 input box */
+.login-input {
+  background: $color-white;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $color-gray02;
+  font-size: 18px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+#id-save-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-left: 33px;
+}
+/* 버튼 */
+#login-button {
+  border: 1px solid $color-black;
+  border-radius: 4px;
+  color: $color-white;
+  font-size: 12px;
+  padding: 5px;
+  background: $color-black;
+  width: 100%;
+}
+#google-button {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #E2E2E2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#google-button::after {
+  content: '구글 계정으로 로그인';
+  font-size: 7px;
+  color: #888888;
+  font-weight: 600;
+}
+
+#kakao-button {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  background: #FEE500;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#kakao-button::after {
+  content: '카카오 계정으로 로그인';
+  font-size: 7px;
+  color: #595959;
+  font-weight: 600;
+}
+#kakao-button > img, #google-button > img {
+  width: 45px;
+}
+/* 경고 메세지 */
+#warning-msg {
+  color: $color-error-red;
+  font-size: 6px;
+}
