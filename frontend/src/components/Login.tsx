@@ -30,7 +30,7 @@ export const Login = () => {
         </form>
       </article>
 
-      <article>
+      <article className='login-items'>
         <img src={login_line} alt='login-line' />
         <article id='social-login-button-container'>
           <section className='login-button-wrapper'>
