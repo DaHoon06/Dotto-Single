@@ -5,5 +5,5 @@ export const customAxios: AxiosInstance = axios.create({
   // headers: {
   //   access_token: '',
   // }
-  baseURL: 'http://localhost:3000',
+  baseURL: 'http://localhost:8080/api',
 });

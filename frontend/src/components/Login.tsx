@@ -5,7 +5,7 @@ import logo from '../assets/images/icons/dotto.svg';
 import login_line from '../assets/images/icons/login/login_line.svg';
 import { useState } from "react";
 import { customAxios } from "../lib/customAxios";
-import {createDeflateRaw} from "zlib";
+import axios from "axios";
 
 export const Login = () => {
   const [inputValue, setInputValue] = useState({
@@ -23,7 +23,9 @@ export const Login = () => {
   };
 
   const login = async () => {
+
     const { data } = await customAxios.post('/user/login', inputValue);
+
   }
 
   return (
