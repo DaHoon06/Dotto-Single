@@ -3,8 +3,29 @@ import google from '../assets/images/icons/login/Google.png'
 import kakao from '../assets/images/icons/login/kakao.png';
 import logo from '../assets/images/icons/dotto.svg';
 import login_line from '../assets/images/icons/login/login_line.svg';
+import { useState } from "react";
+import { customAxios } from "../lib/customAxios";
+import {createDeflateRaw} from "zlib";
 
 export const Login = () => {
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    password: '',
+  });
+  const { id, password } = inputValue;
+
+  const onChangeHandler = async (e: { target: HTMLInputElement }) => {
+    const { name, value } = e.target;
+    setInputValue({
+      ...inputValue,
+      [name]: value,
+    })
+  };
+
+  const login = async () => {
+    const { data } = await customAxios.post('/user/login', inputValue);
+  }
+
   return (
     <article id='login-container'>
 
@@ -14,10 +35,10 @@ export const Login = () => {
       <article className='login-items'>
         <form>
           <section className='login-button-wrapper'>
-            <input type='text' className='login-input' placeholder='아이디' />
+            <input name='id' type='text' className='login-input' placeholder='아이디' onChange={onChangeHandler} value={id} />
           </section>
           <section className='login-button-wrapper'>
-            <input type='text' className='login-input' placeholder='비밀번호' />
+            <input name='password' type='password' autoComplete='false' className='login-input' placeholder='비밀번호' onChange={onChangeHandler} value={password}  />
           </section>
           <p id='warning-msg'>ERROR MSG</p>
           <section id='id-save-wrapper'>
@@ -25,7 +46,7 @@ export const Login = () => {
             <label>아이디 저장</label>
           </section>
           <section className='login-button-wrapper'>
-            <button type='submit' id='login-button'>로그인</button>
+            <button type='submit' id='login-button' onClick={login}>로그인</button>
           </section>
         </form>
       </article>

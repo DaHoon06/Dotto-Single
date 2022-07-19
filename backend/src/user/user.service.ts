@@ -7,7 +7,7 @@ import {UserInformationDto} from "./user.controller";
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRepository(User) private userRepository: UserRepository
+    private userRepository: UserRepository
   ) {}
   //# TODO: 비밀번호 암호화 변경
   async login(body: UserInformationDto): Promise<User[]> {
