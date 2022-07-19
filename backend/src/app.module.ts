@@ -5,6 +5,7 @@ import { ConfigModule } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { MysqlConfigModule } from "./config/db/config.module";
 import { MysqlConfigService } from "./config/db/config.service";
+import { UserModule } from "./user/user.module";
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { MysqlConfigService } from "./config/db/config.service";
       imports: [MysqlConfigModule],
       useClass: MysqlConfigService,
       inject: [MysqlConfigService]
-    })
+    }),
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],

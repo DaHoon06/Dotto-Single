@@ -1,9 +1,21 @@
-import { Controller } from "@nestjs/common";
+import { Body, Controller, Post } from "@nestjs/common";
+import { UserService } from "./user.service";
+import { User } from "./entity/user.entity";
+
+export interface UserInformationDto {
+  id: string;
+  password: string;
+}
 
 @Controller()
 export class UserController {
-  constructor() {
-  }
+  constructor(private userService: UserService) {}
 
+  @Post('/login')
+  async login(@Body() body: UserInformationDto): Promise<User[]> {
+    body.id = 'dahoon';
+    body.password = '!aaa111';
+    return await this.userService.login(body);
+  }
 
 }

@@ -1,21 +1,55 @@
 import { UserController } from "./user.controller";
 import {Test, TestingModule} from "@nestjs/testing";
+import {UserService} from "./user.service";
+import {UserRepository} from "./entity/user.repository";
 
-describe('UserController', () => {
+describe('UserModule', () => {
   let userController: UserController
+  let userService: UserService;
+  let userRepository: UserRepository;
 
   beforeEach(async () => {
-    const user: TestingModule = await Test.createTestingModule({
-      controllers: [],
-      providers: [],
+    const module: TestingModule = await Test.createTestingModule({
+      controllers: [UserController],
+      providers: [UserService, UserRepository],
     }).compile();
 
-    userController = user.get<UserController>(UserController);
+    userController = module.get<UserController>(UserController);
+    userService = module.get<UserService>(UserService);
+    userRepository = module.get<UserRepository>(UserRepository);
   });
 
-  describe('root', () => {
-    it('return hello world', () => {
+  // CONTROLLER
+  describe('UserController', () => {
+    const body = {
+      id: 'dahoon',
+      password: '!aaa111'
+    }
 
+    it ('FIRST TEST CODE', () => {
+      expect(userController.login(body)).toBe('Success String');
+    });
+  });
+
+  // SERVICE
+  describe('UserService', () => {
+    const body = {
+      id: 'dahoon',
+      password: '!aaa111'
+    }
+    it('login', () => {
+      expect(userService.login(body)).toBe(
+        [{
+          seq: 1,
+          id: 'dahoon',
+          password: '!aaa111'
+        }]
+      );
     })
-  })
-})
+  });
+
+
+
+
+
+});
