@@ -7,12 +7,13 @@ export interface UserInformationDto {
   password: string;
 }
 
-@Controller()
+@Controller('/user')
 export class UserController {
   constructor(private userService: UserService) {}
 
   @Post('/login')
   async login(@Body() body: UserInformationDto): Promise<User[]> {
+    console.log(body);
     body.id = 'dahoon';
     body.password = '!aaa111';
     return await this.userService.login(body);
