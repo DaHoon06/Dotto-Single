@@ -2,8 +2,8 @@ import { Column } from "typeorm";
 
 export class CommonDate {
   @Column({ default: new Date() })
-  CREATED_AT: Date;
+  CREATEDAT: Date;
 
   @Column()
-  UPDATED_AT: Date;
+  UPDATEDAT: Date;
 }
