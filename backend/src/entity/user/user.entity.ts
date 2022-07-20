@@ -1,13 +1,29 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { CommonDate } from "../date.entity";
 
 @Entity()
-export class User {
+export class User extends CommonDate{
   @PrimaryGeneratedColumn()
-  seq: number;
+  SEQ: number;
 
   @Column()
-  id: string;
+  ID: string;
 
   @Column()
-  password: string;
+  PASSWORD: string;
+
+  @Column()
+  NICKNAME: string;
+
+  @Column()
+  PHONE: string;
+
+  @Column()
+  GENDER: string;
+
+  @Column({ default: '1' })
+  SOCIALTYPE: string;
+
+
+
 }
