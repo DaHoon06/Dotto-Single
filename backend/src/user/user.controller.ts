@@ -7,7 +7,7 @@ export interface UserInformationDto {
   password: string;
 }
 
-@Controller('/user')
+@Controller()
 export class UserController {
   constructor(private userService: UserService) {}
 
