@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { MysqlConfigModule } from "./config/db/config.module";
@@ -11,13 +9,15 @@ import { UserModule } from "./user/user.module";
   imports: [
     ConfigModule.forRoot({ isGlobal: true, }),
     TypeOrmModule.forRootAsync({
-      imports: [MysqlConfigModule],
+      imports: [
+        MysqlConfigModule,
+      ],
       useClass: MysqlConfigService,
-      inject: [MysqlConfigService]
+      inject: [MysqlConfigService,]
     }),
-    UserModule
+    UserModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
