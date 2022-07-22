@@ -25,7 +25,7 @@ export const Login = () => {
   const login = async () => {
 
     const { data } = await customAxios.post('/user/login', inputValue);
-
+    console.log(data);
   }
 
   return (
