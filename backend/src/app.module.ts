@@ -5,7 +5,7 @@ import { MysqlConfigModule } from "./config/db/config.module";
 import { MysqlConfigService } from "./config/db/config.service";
 import { routes } from './Routes';
 import { RouterModule } from 'nest-router';
-import {UserModule} from "./user/user.module";
+import { UserModule } from "./user/user.module";
 
 @Module({
   imports: [
@@ -24,4 +24,6 @@ import {UserModule} from "./user/user.module";
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule {
+
+}

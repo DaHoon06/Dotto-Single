@@ -3,19 +3,22 @@ import { UserService } from "./user.service";
 import { UserController } from "./user.controller";
 import {User} from "../entity/user/user.entity";
 import {TypeOrmModule} from "@nestjs/typeorm";
-import { RouterModule, Routes } from 'nest-router';
-import {AuthModule} from "../config/auth/auth.module";
-import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { AuthModule } from "../config/auth/auth.module";
+import { ThrottlerModule } from '@nestjs/throttler';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-const routes: Routes = [
-
-]
-
+import {JwtModule} from "@nestjs/jwt";
+import {jwtConstants} from "../config/auth/constants";
 
 @Module({
   imports: [
+    JwtModule.register({
+      secret: jwtConstants.secret,
+      signOptions: {
+        algorithm: 'HS512',
+        expiresIn: process.env.NODE_ENV === 'production' ? '24h' : '60s',
+      },
+    }),
     TypeOrmModule.forFeature([User]),
-    RouterModule.forRoutes(routes),
     AuthModule,
     ThrottlerModule.forRootAsync({
       imports: [ConfigModule],
