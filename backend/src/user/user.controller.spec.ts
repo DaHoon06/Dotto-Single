@@ -35,8 +35,8 @@ describe('UserModule', () => {
   // SERVICE
   describe('UserService', () => {
     const body = {
-      id: 'dahoon',
-      password: '!aaa111'
+      id: 'TEST',
+      password: 'aa11'
     }
     it('login', () => {
       expect(userService.login(body)).toBe(
